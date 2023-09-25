@@ -1,0 +1,22 @@
+<% include('../layouts/header.ejs') %>
+<h1>welcome <%= user.name %></h1>
+<a href="/logout"> Logout</a>
+<table width="50%">
+    <tr>
+        <td><img src="userImages/<%= user.image %>" width="100px" height="100px"="<%= user.image %>"></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <td>mobile</td>
+        <td><%= user.mobile %></td>
+    </tr>
+    <tr>
+        <td>verified</td>
+        <td><%= user.is_verified %></td>
+    </tr>
+</table>
+
+<% include('../layouts/footer.ejs') %>
