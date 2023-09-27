@@ -55,4 +55,8 @@ user_route.post('/forget-password',userController.resetpassword);
 user_route.get('/verification',auth.islogout,userController.loadverificationemail);
 user_route.post('/verification',userController.verificationemail);
 
+
+//user profile edit routes
+user_route.get('/user-edit',auth.islogin,userController.user_edit_load);
+user_route.post('/user-edit',upload.single('image'),userController.user_edit)
 module.exports=user_route;

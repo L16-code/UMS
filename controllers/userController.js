@@ -255,6 +255,36 @@ const verificationemail=async(req,res) => {
         console.log(error.message);
     }
 }
+
+const user_edit_load=async(req,res) => {
+    try {
+        const id=req.query.id;
+        const userdata=await User.findOne({_id:id});
+        if(userdata){
+            res.render('user_edit',{user:userdata})
+        }else{
+            res.redirect('home');
+        }
+
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+const user_edit=async(req,res) => {
+    try {
+        if(req.file){
+            const userdata=await User.findByIdAndUpdate({_id:req.body.id},{$set:{name:req.body.name,email:req.body.email,mobile:req.body.mobile,image:req.file.filename}});
+
+        }else{
+            const userdata=await User.findByIdAndUpdate({_id:req.body.id},{$set:{name:req.body.name,email:req.body.email,mobile:req.body.mobile}});
+        }
+        res.redirect('home')
+
+    } catch (error) {
+        console.log(error.message);
+    }
+}
 module.exports={
     loadRegister,
     insertuser,
@@ -267,5 +297,7 @@ module.exports={
     loadforgetpassword,
     resetpassword,
     loadverificationemail,
-    verificationemail
+    verificationemail,
+    user_edit_load,
+    user_edit
 }

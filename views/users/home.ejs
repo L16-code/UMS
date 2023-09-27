@@ -1,6 +1,7 @@
 <% include('../layouts/header.ejs') %>
 <h1>welcome <%= user.name %></h1>
 <a href="/logout"> Logout</a>
+<a href="/user-edit?id=<%=user._id %>">Edit</a>
 <table width="50%">
     <tr>
         <td><img src="userImages/<%= user.image %>" width="100px" height="100px"="<%= user.image %>"></td>
