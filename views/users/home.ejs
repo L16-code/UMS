@@ -1,10 +1,13 @@
 <% include('../layouts/header.ejs') %>
 <h1>welcome <%= user.name %></h1>
-<a href="/logout"> Logout</a>
-<a href="/user-edit?id=<%=user._id %>">Edit</a>
+<button onclick="document.location='/logout'">Logout</button>
+<button onclick="document.location='/user-edit?id=<%=user._id %>'">Edit</button>
+
+<!-- <a href="/logout"> Logout</a>
+<a href="/user-edit?id=<%=user._id %>">Edit</a> -->
 <table width="50%">
     <tr>
-        <td><img src="userImages/<%= user.image %>" width="100px" height="100px"="<%= user.image %>"></td>
+        <td><img src="userImages/<%= user.image %>" width="100px" height="80px"  alt="<%= user.image %>"></td>
     </tr>
     <tr>
         <td>Email</td>

@@ -1,9 +1,13 @@
 const express = require('express');
 const user_route= express();
+
 const config=require("../config/config")
+
 const session=require("express-session");
 user_route.use(session({secret:config.sessionsecret}));
+
 const auth =require("../middleware/auth")
+
 const bodyParser=require('body-parser');
 user_route.use(bodyParser.json());
 user_route.use(bodyParser.urlencoded({extended:true}));
