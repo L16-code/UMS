@@ -1,0 +1,18 @@
+<% include('../layouts/header.ejs') %>
+
+
+<h1>forget</h1>
+<%
+if(typeof message !== 'undefined'){
+    %>
+    <h3><%= message %></h3>
+    <%
+}
+%>
+<form action="" method="post">
+    <input type="email" name="email" placeholder="email">
+    <br><br>
+    <input type="submit" value="reset">
+</form>
+
+<% include('../layouts/footer.ejs') %>

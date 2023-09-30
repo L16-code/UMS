@@ -1,5 +1,23 @@
 <% include('../layouts/header.ejs') %>
 <h1>Admin</h1>
 <button onclick="document.location='/admin/adminlogout'">Logout</button>
+<button onclick="document.location='/admin/dashboard'">Dashboard</button>
 
+<table width="50%">
+    <tr>
+        <td><img src="/userImages/<%= user.image %>" width="100px" height="80px"  alt="<%= user.image %>"></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <td>mobile</td>
+        <td><%= user.mobile %></td>
+    </tr>
+    <tr>
+        <td>verified</td>
+        <td><%= user.is_verified %></td>
+    </tr>
+</table>
 <% include('../layouts/footer.ejs') %>
